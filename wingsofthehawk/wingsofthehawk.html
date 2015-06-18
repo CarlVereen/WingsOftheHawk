@@ -1,14 +1,29 @@
 <head>
-  <title>wingsofthehawk</title>
+  <title>DnD 5e Character Sheet</title>
 </head>
 
 <body>
-  <h1>Welcome to Meteor!</h1>
-
-  {{> hello}}
+  {{> {{templateName}} }}
 </body>
 
-<template name="hello">
-  <button>Click Me</button>
-  <p>You've pressed the button {{counter}} times.</p>
+<template name="startup">
+  <h1>Character Sheet Start</h1>
+  <button class="generate">Create Character</button>
+  <button class="loadCharacter">Load Character</button>
+  <button class="goHome">Go back to main page</button>
+</template>
+
+<template name="generate">
+  <h1>Character Generator</h1>
+
+</template>
+
+<template name="loadCharacter">
+  <h1>Load Character</h1>
+
+</template>
+
+<template name="home">
+  <h1>Home Page</h1>
+  
 </template>

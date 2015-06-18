@@ -1,23 +1,27 @@
+Characters = new Mongo.Collection('characters');
+
+
 if (Meteor.isClient) {
-  // counter starts at 0
-  Session.setDefault('counter', 0);
+  // Character startup
+  Template.startup.events({
+    'click .generate': function() {
+      console.log('set session to generate');
+      Session.set('startup', 'generate');
 
-  Template.hello.helpers({
-    counter: function () {
-      return Session.get('counter');
+    },
+    'click .loadCharacter': function() {
+      console.log('pushed load');
+      Session.set('startup', 'loadCharacter');
+    },
+    'click .goHome': function() {
+      console.log('pushed home');
+      Session.set('startup', 'home');
     }
   });
 
-  Template.hello.events({
-    'click button': function () {
-      // increment the counter when button is clicked
-      Session.set('counter', Session.get('counter') + 1);
-    }
-  });
 }
 
 if (Meteor.isServer) {
-  Meteor.startup(function () {
-    // code to run on server at startup
-  });
+
+
 }
