@@ -1,21 +1,23 @@
+// Creation of collections for sheet data
 Characters = new Mongo.Collection('characters');
 
+// routing for template changes using iron routing
+Router.route('/', function(){
+  this.render('startup');
+})
 
 if (Meteor.isClient) {
   // Character startup
   Template.startup.events({
     'click .generate': function() {
-      console.log('set session to generate');
-      Session.set('startup', 'generate');
+      Router.go('generate');
 
     },
     'click .loadCharacter': function() {
-      console.log('pushed load');
-      Session.set('startup', 'loadCharacter');
+
     },
     'click .goHome': function() {
-      console.log('pushed home');
-      Session.set('startup', 'home');
+
     }
   });
 
